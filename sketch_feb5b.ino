@@ -1,4 +1,4 @@
-int lights[3];
+int lights[3]; // Color memory
 void setup() {
   for (int i = 0; i != 3; i++)
   {
@@ -38,12 +38,12 @@ void setup() {
   pinMode(6, OUTPUT);
   pinMode(5, OUTPUT);
 }
-char key;
+char key; 
 void loop() {
   
   key = Serial.read();
 
-  if (key == 'r')
+  if (key == 'r') // red
   {
     if (lights[0] == 0)
     {
@@ -55,7 +55,7 @@ void loop() {
       lights[0] = 0;
     }
   }
-  else if (key == 'g')
+  else if (key == 'g') // green
   {
     if (lights[1] == 0)
     {
@@ -67,7 +67,7 @@ void loop() {
       lights[1] = 0;
     }
   }
-  else if (key == 'b')
+  else if (key == 'b') // blue
   {
     if (lights[2] == 0)
     {
@@ -79,13 +79,13 @@ void loop() {
       lights[2] = 0;
     }
   }
-  else if (key == 'd')
+  else if (key == 'd') // disable
   {
     digitalWrite(5, LOW);
     digitalWrite(6, LOW);
     digitalWrite(9, LOW);
   }
-  else if (key == 'e')
+  else if (key == 'e') // enable with saved in lights[3] colors
   {
     for (int i = 0; i != 3; i++)
   {
